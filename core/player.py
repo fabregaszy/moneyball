@@ -1,7 +1,7 @@
 import requests
 
 
-class Player(dict):
+class Player(object):
     """ store the information of a Player """
 
     player_id = None  # the identifier of a player
@@ -17,11 +17,9 @@ class Player(dict):
                 row_set = sets.get('rowSet')
 
                 for i in range(len(headers)):
-                    self[headers[i]] = row_set[0][i]
+                    setattr(self, headers[i], row_set[0][i])
 
     def __init__(self, player_id):
-
-        super(Player, self).__init__()
 
         self.player_id = player_id
 

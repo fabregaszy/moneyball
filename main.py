@@ -6,4 +6,4 @@ from core.player import Player
 player_id = 201939
 curry = Player(player_id)
 
-print(curry)
+print(curry.__dict__)
